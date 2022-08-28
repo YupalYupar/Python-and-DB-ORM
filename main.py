@@ -61,18 +61,12 @@ def get_shop(d='None'):
 
 get_shop(d='Nina')
 
-def get_publisher():
-    while True:
-        command = input('Введите id издателя: ')
-        if id == 1:
-            print(session.query(Publisher).filter(Publisher.id == f'{id}'))
-        if id == 2:
-            print(session.query(Publisher).filter(Publisher.id == f'{id}'))
-        if id == 3:
-            print(session.query(Publisher).filter(Publisher.id == f'{id}'))
-        else:
-            break
 
-get_publisher()
+def get_pub(x):
+    q = session.query(Publisher).filter(Publisher.id == x)
+    for s  in q.all():
+        print(s.id, s.name)
+
+get_pub(3)
 
 session.close()
