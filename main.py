@@ -67,6 +67,10 @@ def get_pub(x):
     for s  in q.all():
         print(s.id, s.name)
 
-get_pub(3)
+def get_pok():
+    x =input("введите id издателья: ")
+    get_pub(x)
+
+get_pok()
 
 session.close()
